@@ -52,3 +52,20 @@ h1 {
 	display: grid;
 	place-items: center;
 }
+
+.content {
+	display: flex;
+	width: 90%;
+	min-width: 300px;
+	justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+	.content {
+		flex-direction: column;
+	}
+}
+
+button {
+	padding: 20px;
+}

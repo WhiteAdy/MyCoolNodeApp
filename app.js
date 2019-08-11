@@ -8,6 +8,28 @@ const mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
+app.post('/add', (req, res) => {
+	console.log(req.body);
+
+	mongoose.connect(
+		'mongodb+srv://Mozartino:Mozarella920%23@mozzarella-0ndgi.azure.mongodb.net/meh?retryWrites=true&w=majority',
+		{ useNewUrlParser: true }
+	);
+	let db = mongoose.connection;
+
+	db.on('error', console.error.bind(console, 'connection error:'));
+	db.once('open', function() {
+		db.db.collection('meh_collection', function(err, collection) {
+			collection.insertOne({
+				name: req.body.name,
+				age: req.body.age,
+				sex: req.body.sex
+			});
+		});
+	});
+	res.send('caca');
+});
+
 app.get('/mongo', (req, res) => {
 	mongoose.connect(
 		'mongodb+srv://Mozartino:Mozarella920%23@mozzarella-0ndgi.azure.mongodb.net/meh?retryWrites=true&w=majority',
