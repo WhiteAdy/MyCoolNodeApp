@@ -39,7 +39,7 @@ db.once('open', function() {
 	});
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
 
 // const MongoClient = require('mongodb').MongoClient;
 // const uri =
