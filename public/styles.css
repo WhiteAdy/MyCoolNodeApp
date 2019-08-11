@@ -14,6 +14,8 @@ h1 {
 
 .card-group {
 	align-self: baseline;
+	width: 30%;
+	min-width: 300px;
 }
 
 @keyframes caca {

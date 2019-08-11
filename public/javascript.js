@@ -1,3 +1,19 @@
+const pepe = document.getElementById('pepe');
+document.querySelector('.content').addEventListener('mouseover', e => {
+	if (
+		e.target.classList.contains('card-group') ||
+		e.target.classList.contains('card')
+	) {
+		pepe.style.transform = 'rotateY(180deg)';
+	}
+	if (
+		e.target.classList.contains('form') ||
+		e.target.parentElement.classList.contains('form')
+	) {
+		pepe.style.transform = 'rotateY(0)';
+	}
+});
+
 document.getElementById('bagaButton').addEventListener('click', e => {
 	let nameInput = document.getElementById('name');
 	let ageInput = document.getElementById('age');
