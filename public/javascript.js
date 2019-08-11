@@ -34,6 +34,10 @@ document.getElementById('bagaButton').addEventListener('click', e => {
 					.querySelector('.card-group')
 					.insertAdjacentElement('afterbegin', card);
 				card.classList.add('enter');
+				document.getElementById('bagaButton').style.display = 'none';
+				setTimeout(() => {
+					document.getElementById('bagaButton').style.display = 'block';
+				}, 1500);
 			})
 			.catch(err => {
 				console.log('error adding: ', err);
